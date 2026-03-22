@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Custom styles for vanilla-jsoneditor to match Bundlephobia */
+.jse-theme-default {
+  --jse-font-family: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  --jse-font-family-mono: "Fira Code", ui-monospace, SFMono-Regular, monospace;
+  --jse-font-size: 14px;
+  --jse-background-color: #ffffff;
+  --jse-panel-background: #ffffff;
+  --jse-panel-border: 1px solid #f3f4f6;
+  --jse-color: #1a1a1a;
+  --jse-key-color: #1a1a1a;
+  --jse-value-color-string: #059669;
+  --jse-value-color-number: #2563eb;
+  --jse-value-color-boolean: #d97706;
+  --jse-value-color-null: #dc2626;
+  --jse-value-color-url: #2563eb;
+  --jse-delimiter-color: #9ca3af;
+  --jse-selection-background-color: #f3f4f6;
+  --jse-selection-background-inactive-color: #f9fafb;
+  --jse-hover-background-color: #f9fafb;
+  --jse-active-line-background-color: #f9fafb;
+  
+  /* Override the default blue theme for the toolbar and modals */
+  --jse-theme-color: #1a1a1a;
+  --jse-theme-color-highlight: #333333;
+  --jse-text-color-inverse: #ffffff;
+  
+  --jse-menu-color: #4b5563;
+  --jse-menu-button-color: #4b5563;
+  --jse-menu-button-hover-color: #111827;
+  --jse-menu-button-active-color: #111827;
+  --jse-menu-button-active-background: #ffffff;
+  --jse-context-menu-background: #ffffff;
+  --jse-context-menu-color: #1a1a1a;
+  --jse-context-menu-pointer-background: #f3f4f6;
+  --jse-context-menu-pointer-color: #1a1a1a;
+  --jse-context-menu-separator-color: #f3f4f6;
+  --jse-context-menu-button-background: #ffffff;
+  --jse-context-menu-button-background-hover: #f3f4f6;
+  --jse-context-menu-button-color: #1a1a1a;
+  --jse-context-menu-button-color-hover: #1a1a1a;
+  --jse-message-background-error: #fee2e2;
+  --jse-message-color-error: #991b1b;
+  --jse-message-background-warning: #fef3c7;
+  --jse-message-color-warning: #92400e;
+  --jse-message-background-success: #d1fae5;
+  --jse-message-color-success: #065f46;
+  --jse-message-background-info: #dbeafe;
+  --jse-message-color-info: #1e40af;
+  --jse-message-background-action: #ffffff;
+  --jse-message-color-action: #1a1a1a;
+  --jse-button-background: #1a1a1a;
+  --jse-button-background-highlight: #333333;
+  --jse-button-color: #ffffff;
+  --jse-button-secondary-background: #ffffff;
+  --jse-button-secondary-background-highlight: #f3f4f6;
+  --jse-button-secondary-background-disabled: #f9fafb;
+  --jse-button-secondary-color: #1a1a1a;
+  --jse-input-background: #ffffff;
+  --jse-input-background-readonly: #f9fafb;
+  --jse-input-border: 1px solid #e5e7eb;
+  --jse-input-border-focus: 1px solid #1a1a1a;
+  --jse-input-color: #1a1a1a;
+  --jse-tooltip-background: #1a1a1a;
+  --jse-tooltip-color: #ffffff;
+  --jse-tooltip-border: 1px solid #1a1a1a;
+}
+
+/* Hide the main menu bar if it's still visible */
+.jse-main {
+  border: none !important;
+}
+
+/* Deep customization of the native toolbar to match Bundlephobia style */
+.jse-menu {
+  background-color: #f9fafb !important;
+  color: #4b5563 !important;
+  border-bottom: 1px solid #f3f4f6 !important;
+  padding: 0.5rem 0.75rem !important;
+}
+
+.jse-menu .jse-button {
+  color: #4b5563 !important;
+  border-radius: 0.5rem !important;
+  margin: 0 0.125rem !important;
+  transition: all 0.2s ease !important;
+}
+
+.jse-menu .jse-button:hover {
+  background-color: #ffffff !important;
+  color: #111827 !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+}
+
+/* The mode switcher (text/tree/table) */
+.jse-menu .jse-group.jse-modes {
+  background-color: #f3f4f6 !important;
+  border-radius: 0.75rem !important;
+  padding: 0.25rem !important;
+  gap: 0.25rem !important;
+  border: none !important;
+}
+
+.jse-menu .jse-group.jse-modes .jse-button {
+  border-radius: 0.5rem !important;
+  color: #6b7280 !important;
+  background: transparent !important;
+  border: none !important;
+  padding: 0.25rem 0.75rem !important;
+  font-weight: 500 !important;
+}
+
+.jse-menu .jse-group.jse-modes .jse-button:hover {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+}
+
+.jse-menu .jse-group.jse-modes .jse-button.jse-active,
+.jse-menu .jse-group.jse-modes .jse-button.jse-selected,
+.jse-menu .jse-group.jse-modes .jse-button[class*="active"],
+.jse-menu .jse-group.jse-modes .jse-button[class*="selected"] {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05) !important;
+}
+
+/* Override all primary/blue buttons globally */
+.jse-button.jse-primary,
+button.jse-primary,
+.jse-message .jse-actions .jse-button {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+}
+
+.jse-button.jse-primary:hover,
+button.jse-primary:hover,
+.jse-message .jse-actions .jse-button:hover {
+  background-color: #333333 !important;
+}
+
+/* Separator lines in the menu */
+.jse-menu .jse-separator {
+  background-color: #e5e7eb !important;
+  width: 1px !important;
+  height: 1.25rem !important;
+  margin: 0 0.5rem !important;
+}
+
+/* Modal styling overrides */
+.jse-modal {
+  border-radius: 1rem !important;
+  overflow: hidden !important;
+  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  border: 1px solid #e5e7eb !important;
+}
+
+.jse-modal .jse-header {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  padding: 1rem 1.25rem !important;
+  font-weight: 600 !important;
+}
+
+.jse-modal .jse-header .jse-close {
+  color: #ffffff !important;
+  opacity: 0.7 !important;
+}
+
+.jse-modal .jse-header .jse-close:hover {
+  opacity: 1 !important;
+  background: rgba(255,255,255,0.1) !important;
+}
+
+.jse-modal .jse-actions {
+  padding: 1rem 1.25rem !important;
+  background-color: #f9fafb !important;
+  border-top: 1px solid #e5e7eb !important;
+}
+
+.jse-modal .jse-button.jse-primary {
+  background-color: #1a1a1a !important;
+  color: #ffffff !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.jse-modal .jse-button.jse-primary:hover {
+  background-color: #333333 !important;
+}
+
+.jse-modal .jse-button.jse-secondary {
+  background-color: #ffffff !important;
+  color: #1a1a1a !important;
+  border: 1px solid #e5e7eb !important;
+  border-radius: 0.5rem !important;
+  font-weight: 500 !important;
+  padding: 0.5rem 1rem !important;
+}
+
+.jse-modal .jse-button.jse-secondary:hover {
+  background-color: #f9fafb !important;
+}
+
+.jse-modal select, .jse-modal input {
+  border-radius: 0.5rem !important;
+  border: 1px solid #e5e7eb !important;
+  padding: 0.5rem !important;
+}
+
+.jse-modal select:focus, .jse-modal input:focus {
+  border-color: #1a1a1a !important;
+  outline: 1px solid #1a1a1a !important;
+}
+
+.vanilla-jsoneditor-react {
+  height: 100%;
+}
