@@ -1,5 +1,5 @@
 {
-  "name": "",
-  "description": "",
+  "name": "JsonEditor",
+  "description": "一款极简且强大的在线 JSON 编辑器，支持格式化、语法校验、多视图（树状/表格/文本）切换、双栏数据对比及 URL 远程拉取数据功能。",
   "requestFramePermissions": []
 }

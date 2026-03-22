@@ -5,15 +5,17 @@ import { FileJson, Search, Loader2, ChevronRight, ChevronLeft, ArrowRightLeft, C
 export default function App() {
   const [leftContent, setLeftContent] = useState<any>({
     json: {
-      greeting: '你好，世界！',
-      description: '这是一个基于 svelte-jsoneditor 的 React 封装。',
+      name: '在线 JSON 编辑器',
+      version: '1.0.0',
+      description: '一款极简、高效的 JSON 数据处理工具。',
       features: [
-        '支持树状视图、文本视图和表格视图',
-        '极简 Shadcn UI 风格设计',
-        '保留了原版所有的强大功能（排序、过滤、撤销等）',
-        '按需展开的双栏对比编辑',
-        '完美适配移动端与桌面端'
+        '✨ 智能格式化与语法校验',
+        '🌲 支持文本、树状和表格三种视图',
+        '⚖️ 双栏模式，轻松进行 JSON 数据对比',
+        '🔗 支持直接输入 URL 获取远程 JSON 数据',
+        '📱 完美适配桌面端与移动端'
       ],
+      usage: '在左侧或右侧粘贴您的 JSON 数据，或通过顶部输入框拉取远程数据即可开始体验。',
       isAwesome: true
     }
   });
